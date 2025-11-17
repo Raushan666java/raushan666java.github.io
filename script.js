@@ -30,6 +30,22 @@ class PortfolioAnimator {
     this.initThemeToggle();
     this.initNavbarScroll();
     this.initTiltEffect();
+    this.initFloatingElements();
+    this.initTextGradientAnimation();
+    this.initMouseTrail();
+    this.initRevealText();
+    this.initImageHoverEffect();
+    this.initSkillBounce();
+    this.initWaveAnimation();
+    this.initCodeRain();
+    this.initPulseEffect();
+    this.initMorphingShapes();
+    this.initInfiniteScroll();
+    this.initTypewriterMultiple();
+    this.initParticleText();
+    this.initHolographicEffect();
+    this.initNeonGlow();
+    this.initMatrixBackground();
   }
 
   // ========================================
@@ -674,6 +690,459 @@ class PortfolioAnimator {
       });
     });
   }
+
+  // ========================================
+  // Floating Elements Animation
+  // ========================================
+  initFloatingElements() {
+    const floatingElements = document.querySelectorAll('.hero-text, .about-content, .section-title');
+    
+    floatingElements.forEach((element, index) => {
+      const randomDelay = Math.random() * 2;
+      const randomDuration = 3 + Math.random() * 2;
+      
+      element.style.animation = `float ${randomDuration}s ease-in-out ${randomDelay}s infinite`;
+    });
+  }
+
+  // ========================================
+  // Animated Text Gradient
+  // ========================================
+  initTextGradientAnimation() {
+    const gradientTexts = document.querySelectorAll('h1, h2, .hero-text h2');
+    
+    gradientTexts.forEach(text => {
+      text.style.backgroundImage = 'linear-gradient(90deg, #00d9ff, #6366f1, #ec4899, #00d9ff)';
+      text.style.backgroundSize = '200% auto';
+      text.style.color = 'transparent';
+      text.style.webkitBackgroundClip = 'text';
+      text.style.backgroundClip = 'text';
+      text.style.animation = 'gradientShift 3s ease infinite';
+    });
+  }
+
+  // ========================================
+  // Mouse Trail Effect
+  // ========================================
+  initMouseTrail() {
+    const colors = ['#00d9ff', '#6366f1', '#ec4899', '#10b981'];
+    let mouseX = 0, mouseY = 0;
+    
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+    
+    setInterval(() => {
+      const trail = document.createElement('div');
+      trail.className = 'mouse-trail';
+      trail.style.cssText = `
+        position: fixed;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: ${colors[Math.floor(Math.random() * colors.length)]};
+        pointer-events: none;
+        z-index: 9998;
+        left: ${mouseX}px;
+        top: ${mouseY}px;
+        animation: trailFade 1s ease-out forwards;
+      `;
+      
+      document.body.appendChild(trail);
+      setTimeout(() => trail.remove(), 1000);
+    }, 50);
+  }
+
+  // ========================================
+  // Reveal Text Letter by Letter
+  // ========================================
+  initRevealText() {
+    const revealTexts = document.querySelectorAll('.about-content p');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const text = entry.target.textContent;
+          entry.target.textContent = '';
+          
+          text.split('').forEach((char, index) => {
+            const span = document.createElement('span');
+            span.textContent = char;
+            span.style.opacity = '0';
+            span.style.animation = `fadeInChar 0.05s ease forwards ${index * 0.02}s`;
+            entry.target.appendChild(span);
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    revealTexts.forEach(text => observer.observe(text));
+  }
+
+  // ========================================
+  // Advanced Image Hover Effect
+  // ========================================
+  initImageHoverEffect() {
+    const images = document.querySelectorAll('img');
+    
+    images.forEach(img => {
+      img.style.transition = 'all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+      
+      img.addEventListener('mouseenter', () => {
+        img.style.transform = 'scale(1.1) rotate(2deg)';
+        img.style.filter = 'brightness(1.2) saturate(1.5)';
+        img.style.boxShadow = '0 20px 60px rgba(0, 217, 255, 0.4)';
+      });
+      
+      img.addEventListener('mouseleave', () => {
+        img.style.transform = 'scale(1) rotate(0deg)';
+        img.style.filter = 'brightness(1) saturate(1)';
+        img.style.boxShadow = '';
+      });
+    });
+  }
+
+  // ========================================
+  // Skill Icons Bounce Effect
+  // ========================================
+  initSkillBounce() {
+    const icons = document.querySelectorAll('.tech-icon, i');
+    
+    icons.forEach((icon, index) => {
+      icon.addEventListener('mouseenter', () => {
+        icon.style.animation = 'bounce 0.6s ease';
+      });
+      
+      icon.addEventListener('animationend', () => {
+        icon.style.animation = '';
+      });
+      
+      // Auto bounce on scroll into view
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              icon.style.animation = 'bounce 0.6s ease';
+            }, index * 100);
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      observer.observe(icon);
+    });
+  }
+
+  // ========================================
+  // Wave Animation on Sections
+  // ========================================
+  initWaveAnimation() {
+    const sections = document.querySelectorAll('section');
+    
+    sections.forEach((section, index) => {
+      if (index % 2 === 0) {
+        const wave = document.createElement('div');
+        wave.className = 'wave-divider';
+        wave.innerHTML = `
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" style="width: 100%; height: 80px; transform: rotate(180deg);">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
+                  style="fill: rgba(0, 217, 255, 0.1); animation: waveMove 10s ease-in-out infinite;"></path>
+          </svg>
+        `;
+        section.style.position = 'relative';
+        section.insertBefore(wave, section.firstChild);
+      }
+    });
+  }
+
+  // ========================================
+  // Code Rain Effect (Matrix Style)
+  // ========================================
+  initCodeRain() {
+    const canvas = document.createElement('canvas');
+    canvas.style.cssText = `
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.1;
+    `;
+    document.body.appendChild(canvas);
+    
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*(){}[]<>/';
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+    
+    function draw() {
+      ctx.fillStyle = 'rgba(10, 14, 39, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      ctx.fillStyle = '#00d9ff';
+      ctx.font = fontSize + 'px monospace';
+      
+      for (let i = 0; i < drops.length; i++) {
+        const text = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+    
+    setInterval(draw, 50);
+  }
+
+  // ========================================
+  // Pulse Effect on Important Elements
+  // ========================================
+  initPulseEffect() {
+    const pulseElements = document.querySelectorAll('.btn, .social-link');
+    
+    pulseElements.forEach(element => {
+      setInterval(() => {
+        element.style.animation = 'pulse 1s ease';
+        setTimeout(() => {
+          element.style.animation = '';
+        }, 1000);
+      }, 5000);
+    });
+  }
+
+  // ========================================
+  // Morphing Shapes Background
+  // ========================================
+  initMorphingShapes() {
+    const shapes = ['circle', 'polygon', 'ellipse'];
+    const colors = ['#00d9ff', '#6366f1', '#ec4899'];
+    
+    for (let i = 0; i < 5; i++) {
+      const shape = document.createElement('div');
+      shape.className = 'morphing-shape';
+      shape.style.cssText = `
+        position: fixed;
+        width: ${100 + Math.random() * 200}px;
+        height: ${100 + Math.random() * 200}px;
+        background: ${colors[Math.floor(Math.random() * colors.length)]};
+        opacity: 0.05;
+        border-radius: ${Math.random() * 50}%;
+        top: ${Math.random() * 100}%;
+        left: ${Math.random() * 100}%;
+        pointer-events: none;
+        z-index: 1;
+        animation: morph ${5 + Math.random() * 10}s ease-in-out infinite, float ${3 + Math.random() * 5}s ease-in-out infinite;
+        filter: blur(40px);
+      `;
+      document.body.appendChild(shape);
+    }
+  }
+
+  // ========================================
+  // Infinite Scroll Indicator
+  // ========================================
+  initInfiniteScroll() {
+    const scrollIndicator = document.createElement('div');
+    scrollIndicator.className = 'scroll-indicator';
+    scrollIndicator.innerHTML = `
+      <div style="width: 30px; height: 50px; border: 2px solid #00d9ff; border-radius: 20px; position: relative;">
+        <div style="width: 6px; height: 10px; background: #00d9ff; border-radius: 3px; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); animation: scrollDown 2s infinite;"></div>
+      </div>
+      <p style="margin-top: 10px; font-size: 12px; color: #00d9ff;">Scroll Down</p>
+    `;
+    scrollIndicator.style.cssText = `
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      z-index: 100;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    `;
+    document.body.appendChild(scrollIndicator);
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollIndicator.style.opacity = '0';
+      } else {
+        scrollIndicator.style.opacity = '1';
+      }
+    });
+  }
+
+  // ========================================
+  // Multiple Typewriter Effects
+  // ========================================
+  initTypewriterMultiple() {
+    const roles = ['Full Stack Developer', 'Backend Engineer', 'Problem Solver', 'Tech Enthusiast'];
+    const roleElement = document.querySelector('.hero-text h2');
+    
+    if (!roleElement) return;
+    
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    
+    function typeRole() {
+      const currentRole = roles[roleIndex];
+      
+      if (isDeleting) {
+        roleElement.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        roleElement.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+      }
+      
+      let typeSpeed = isDeleting ? 50 : 100;
+      
+      if (!isDeleting && charIndex === currentRole.length) {
+        typeSpeed = 2000;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        typeSpeed = 500;
+      }
+      
+      setTimeout(typeRole, typeSpeed);
+    }
+    
+    setTimeout(typeRole, 2000);
+  }
+
+  // ========================================
+  // Particle Text Effect
+  // ========================================
+  initParticleText() {
+    const headings = document.querySelectorAll('h1');
+    
+    headings.forEach(heading => {
+      heading.addEventListener('mouseenter', () => {
+        const rect = heading.getBoundingClientRect();
+        
+        for (let i = 0; i < 20; i++) {
+          const particle = document.createElement('div');
+          particle.style.cssText = `
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: #00d9ff;
+            border-radius: 50%;
+            left: ${rect.left + Math.random() * rect.width}px;
+            top: ${rect.top + Math.random() * rect.height}px;
+            pointer-events: none;
+            z-index: 9999;
+            animation: particleExplode 1s ease-out forwards;
+          `;
+          document.body.appendChild(particle);
+          setTimeout(() => particle.remove(), 1000);
+        }
+      });
+    });
+  }
+
+  // ========================================
+  // Holographic Effect
+  // ========================================
+  initHolographicEffect() {
+    const holoElements = document.querySelectorAll('.project-card, .skill-category');
+    
+    holoElements.forEach(element => {
+      element.style.position = 'relative';
+      element.style.overflow = 'hidden';
+      
+      const holoLayer = document.createElement('div');
+      holoLayer.style.cssText = `
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, 
+          transparent, 
+          rgba(0, 217, 255, 0.1), 
+          transparent, 
+          rgba(236, 72, 153, 0.1), 
+          transparent);
+        animation: holoSweep 3s linear infinite;
+        pointer-events: none;
+      `;
+      element.appendChild(holoLayer);
+    });
+  }
+
+  // ========================================
+  // Neon Glow Effect
+  // ========================================
+  initNeonGlow() {
+    const neonElements = document.querySelectorAll('.btn, .nav-links a');
+    
+    neonElements.forEach(element => {
+      element.addEventListener('mouseenter', () => {
+        element.style.textShadow = `
+          0 0 10px #00d9ff,
+          0 0 20px #00d9ff,
+          0 0 30px #00d9ff,
+          0 0 40px #00d9ff
+        `;
+        element.style.boxShadow = `
+          0 0 10px #00d9ff,
+          0 0 20px #00d9ff,
+          0 0 30px #00d9ff,
+          inset 0 0 10px #00d9ff
+        `;
+      });
+      
+      element.addEventListener('mouseleave', () => {
+        element.style.textShadow = '';
+        element.style.boxShadow = '';
+      });
+    });
+  }
+
+  // ========================================
+  // Matrix Background Animation
+  // ========================================
+  initMatrixBackground() {
+    const container = document.createElement('div');
+    container.className = 'matrix-bg';
+    container.style.cssText = `
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.05;
+    `;
+    
+    for (let i = 0; i < 50; i++) {
+      const line = document.createElement('div');
+      line.style.cssText = `
+        position: absolute;
+        width: 2px;
+        height: ${Math.random() * 100 + 50}px;
+        background: linear-gradient(to bottom, transparent, #00d9ff, transparent);
+        left: ${Math.random() * 100}%;
+        top: -100px;
+        animation: matrixFall ${5 + Math.random() * 10}s linear infinite ${Math.random() * 5}s;
+      `;
+      container.appendChild(line);
+    }
+    
+    document.body.appendChild(container);
+  }
 }
 
 // ========================================
@@ -746,6 +1215,181 @@ style.textContent = `
 
   .skill-category, .project-card, .education-item {
     transition: transform 0.1s ease;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes trailFade {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0); }
+  }
+
+  @keyframes fadeInChar {
+    to { opacity: 1; }
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    25% { transform: translateY(-10px) scale(1.1); }
+    50% { transform: translateY(0) scale(1); }
+    75% { transform: translateY(-5px) scale(1.05); }
+  }
+
+  @keyframes waveMove {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-25%); }
+    100% { transform: translateX(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 217, 255, 0.7); }
+    50% { transform: scale(1.05); box-shadow: 0 0 20px 10px rgba(0, 217, 255, 0); }
+  }
+
+  @keyframes morph {
+    0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  }
+
+  @keyframes scrollDown {
+    0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  }
+
+  @keyframes particleExplode {
+    0% { opacity: 1; transform: translate(0, 0) scale(1); }
+    100% { 
+      opacity: 0; 
+      transform: translate(
+        ${Math.random() * 200 - 100}px, 
+        ${Math.random() * 200 - 100}px
+      ) scale(0);
+    }
+  }
+
+  @keyframes holoSweep {
+    0% { transform: rotate(0deg) translateX(-100%); }
+    100% { transform: rotate(0deg) translateX(100%); }
+  }
+
+  @keyframes matrixFall {
+    0% { top: -100px; opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+  }
+
+  @keyframes rotateGradient {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+  }
+
+  @keyframes slideInFromLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+
+  @keyframes slideInFromRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+
+  @keyframes zoomIn {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  @keyframes flipIn {
+    from { transform: perspective(400px) rotateY(90deg); opacity: 0; }
+    to { transform: perspective(400px) rotateY(0); opacity: 1; }
+  }
+
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    10%, 30% { transform: scale(0.9); }
+    20%, 40% { transform: scale(1.1); }
+  }
+
+  /* Add shimmer effect to headings */
+  h1::before, h2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: shimmer 3s infinite;
+  }
+
+  /* Cursor trails */
+  .mouse-trail {
+    box-shadow: 0 0 10px currentColor;
+  }
+
+  /* Enhanced button hover */
+  .btn {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+
+  .btn:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  /* Glowing borders */
+  .project-card, .skill-category {
+    position: relative;
+  }
+
+  .project-card::after, .skill-category::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(45deg, #00d9ff, #6366f1, #ec4899, #00d9ff);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: rotateGradient 3s linear infinite;
+  }
+
+  .project-card:hover::after, .skill-category:hover::after {
+    opacity: 1;
   }
 `;
 document.head.appendChild(style);
