@@ -14,7 +14,7 @@
       if (entry.isIntersecting) {
         var id = entry.target.getAttribute('id');
         navLinks.forEach(function(link) {
-          link.style.color = link.getAttribute('href') === '#' + id ? 'var(--accent)' : '';
+          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
         });
       }
     });

@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Raushan Kumar · Software Engineer</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,25 +28,28 @@
 
   <section id="home" class="hero">
     <div class="hero-inner">
-      <div class="hero-text">
-        <div class="badge">Software Engineer · Bihar, India</div>
-        <h1 class="hero-title">Raushan Kumar</h1>
-        <p class="hero-desc">
-          I build SaaS platforms, backend systems, and AI-powered tools.
-          <span class="hero-sub">Laravel · React · DevOps · AI</span>
-        </p>
-        <div class="hero-actions">
-          <a href="#work" class="btn-primary">View Work</a>
-          <a href="#contact" class="btn-secondary">Contact</a>
+      <div class="masthead">
+        <div class="masthead-text">
+          <div class="masthead-ascii">+-------------------------------------------------+</div>
+          <div class="badge">Software Engineer · Bihar, India</div>
+          <h1 class="hero-title">Raushan <span class="accent">Kumar</span></h1>
+          <p class="hero-desc">
+            I build SaaS platforms, backend systems, and AI-powered tools.
+          </p>
+          <span class="hero-sub">$ whoami && echo 'Laravel · React · DevOps · AI'</span>
+          <div class="hero-actions">
+            <a href="#work" class="btn-primary">View Work</a>
+            <a href="#contact" class="btn-secondary">Contact</a>
+          </div>
         </div>
-      </div>
-      <div class="hero-visual">
-        <div class="avatar">
-          <span>RK</span>
+        <div class="avatar-box-wrap">
+          <div class="avatar-box">RK</div>
         </div>
       </div>
     </div>
   </section>
+
+  <div class="ascii-rule">+=============================================================================+</div>
 
   <section id="about" class="section">
     <div class="section-inner">
@@ -62,7 +68,7 @@
         </div>
         <div class="stat">
           <span class="stat-num">5+</span>
-          <span class="stat-label">Years</span>
+          <span class="stat-label">Years Exp</span>
         </div>
         <div class="stat">
           <span class="stat-num">20+</span>
@@ -72,6 +78,8 @@
     </div>
   </section>
 
+  <div class="ascii-rule">+-----------------------------------------------------------------------------+</div>
+
   <section id="skills" class="section">
     <div class="section-inner">
       <div class="section-head">
@@ -80,7 +88,7 @@
       </div>
       <div class="skills-grid">
         <div class="skill-card">
-          <h3><span class="skill-icon">⚙️</span> Backend</h3>
+          <h3>Backend</h3>
           <ul>
             <li>Laravel, PHP, Node.js</li>
             <li>REST APIs, Microservices</li>
@@ -90,7 +98,7 @@
           </ul>
         </div>
         <div class="skill-card">
-          <h3><span class="skill-icon">🎨</span> Frontend</h3>
+          <h3>Frontend</h3>
           <ul>
             <li>React, Vue.js, Inertia</li>
             <li>JavaScript (ES6+)</li>
@@ -99,7 +107,7 @@
           </ul>
         </div>
         <div class="skill-card">
-          <h3><span class="skill-icon">☁️</span> DevOps</h3>
+          <h3>DevOps</h3>
           <ul>
             <li>Docker, Kubernetes</li>
             <li>CI/CD (GitHub Actions)</li>
@@ -109,7 +117,7 @@
           </ul>
         </div>
         <div class="skill-card">
-          <h3><span class="skill-icon">🤖</span> AI &amp; Tools</h3>
+          <h3>AI &amp; Tools</h3>
           <ul>
             <li>Python, LangChain, LLMs</li>
             <li>AI Agents (OpenAI, Claude)</li>
@@ -120,6 +128,8 @@
       </div>
     </div>
   </section>
+
+  <div class="ascii-rule">+-----------------------------------------------------------------------------+</div>
 
   <section id="work" class="section">
     <div class="section-inner">
@@ -148,6 +158,8 @@
     </div>
   </section>
 
+  <div class="ascii-rule">+-----------------------------------------------------------------------------+</div>
+
   <section id="study" class="section">
     <div class="section-inner">
       <div class="section-head">
@@ -156,39 +168,41 @@
       </div>
       <p class="section-sub">Complete placement preparation system — 10 modules, interactive tools, and trackers.</p>
       <div class="study-grid">
-        <a href="https://raushan666java.github.io/ai-engineering-journey/placement/dashboard/" class="study-card" target="_blank">
-          <span class="study-icon">📊</span>
+        <a href="/study/placement/dashboard/" class="study-card">
+          <span class="study-num">TOOLS</span>
           <h3>Dashboard</h3>
           <p>Pomodoro timer, streak tracking, daily plan, module progress</p>
         </a>
-        <a href="https://raushan666java.github.io/ai-engineering-journey/placement/dsa-tracker/" class="study-card" target="_blank">
-          <span class="study-icon">🧩</span>
+        <a href="/study/placement/dsa-tracker/" class="study-card">
+          <span class="study-num">TOOLS</span>
           <h3>DSA Tracker</h3>
           <p>130+ problems · Search &amp; filter · Random picker</p>
         </a>
-        <a href="https://raushan666java.github.io/ai-engineering-journey/placement/goal/" class="study-card" target="_blank">
-          <span class="study-icon">🎯</span>
+        <a href="/study/placement/goal/" class="study-card">
+          <span class="study-num">TOOLS</span>
           <h3>90-Day Plan</h3>
           <p>Day-by-day plan · Auto-highlight today · Notes widget</p>
         </a>
-        <a href="https://raushan666java.github.io/ai-engineering-journey/placement/02-cs-core/" class="study-card" target="_blank">
-          <span class="study-icon">💻</span>
+        <a href="/study/placement/02-cs-core/" class="study-card">
+          <span class="study-num">MODULE</span>
           <h3>CS Core</h3>
           <p>DSA, OS, DBMS, Networks, COA, TOC, Software Engineering</p>
         </a>
-        <a href="https://raushan666java.github.io/ai-engineering-journey/placement/08-interview-prep/" class="study-card" target="_blank">
-          <span class="study-icon">⚡</span>
+        <a href="/study/placement/08-interview-prep/" class="study-card">
+          <span class="study-num">MODULE</span>
           <h3>Interview Prep</h3>
           <p>Technical, behavioral, system design · STAR method</p>
         </a>
-        <a href="https://raushan666java.github.io/ai-engineering-journey/placement/10-system-design/" class="study-card" target="_blank">
-          <span class="study-icon">🏗️</span>
+        <a href="/study/placement/10-system-design/" class="study-card">
+          <span class="study-num">MODULE</span>
           <h3>System Design</h3>
           <p>Case studies · Framework · Scalability patterns</p>
         </a>
       </div>
     </div>
   </section>
+
+  <div class="ascii-rule">+-----------------------------------------------------------------------------+</div>
 
   <section id="contact" class="section">
     <div class="section-inner">
@@ -217,10 +231,12 @@
     </div>
   </section>
 
+  <div class="ascii-rule">+=============================================================================+</div>
+
   <footer class="footer">
     <div class="footer-inner">
       <span>&copy; 2026 Raushan Kumar</span>
-      <span>Designed from scratch</span>
+      <span>built with &lt;/&gt;</span>
     </div>
   </footer>
 
