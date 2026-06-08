@@ -3,445 +3,238 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Raushan | Software Engineer</title>
+  <title>Raushan Kumar · Software Engineer</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Animated Background Particles -->
-  <div class="particles-container" id="particles-js"></div>
-  
-  <!-- Scroll Progress Bar -->
-  <div class="scroll-progress"></div>
 
-  <nav class="navbar">
-    <div class="container">
-      <h1 class="logo animate-slide-in">Raushan<span class="logo-dot">.</span></h1>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">Raushan<span class="nav-logo-dot">.</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#work">Work</a>
+        <a href="#study">Study</a>
+        <a href="#contact">Contact</a>
+        <a href="https://github.com/Raushan666java" class="nav-icon" target="_blank">GH</a>
       </div>
     </div>
   </nav>
 
+  <!-- HERO -->
   <section id="home" class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-text">
-          <span class="wave animate-wave">👋</span>
-          <h1 class="animate-fade-in">Hi, I'm <span class="highlight typing-effect">Raushan</span></h1>
-          <h2 class="animate-fade-in-delay-1">🚀 <span class="gradient-text">Software Engineer</span> | SaaS Developer | DevOps Practitioner | AI Engineering Enthusiast</h2>
-          <p class="animate-fade-in-delay-2">I specialize in building scalable SaaS applications, high-performance backend systems, and modern DevOps-driven infrastructures. Passionate about automation, cloud-native technologies, and AI-powered development.</p>
-          <div class="hero-buttons animate-fade-in-delay-3">
-            <a href="#projects" class="btn btn-primary btn-animated">
-              <span>View My Work</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
-            <a href="#contact" class="btn btn-secondary btn-animated">
-              <span>Get In Touch</span>
-              <i class="fas fa-envelope"></i>
-            </a>
-          </div>
-          <!-- Tech Stack Icons with Animation -->
-          <div class="tech-stack animate-fade-in-delay-4">
-            <span class="tech-icon bounce-animation"><i class="fab fa-laravel"></i></span>
-            <span class="tech-icon bounce-animation delay-1"><i class="fab fa-react"></i></span>
-            <span class="tech-icon bounce-animation delay-2"><i class="fab fa-docker"></i></span>
-            <span class="tech-icon bounce-animation delay-3"><i class="fab fa-python"></i></span>
-            <span class="tech-icon bounce-animation delay-4"><i class="fab fa-aws"></i></span>
-          </div>
+    <div class="hero-body">
+      <span class="hero-label">Software Engineer · Bihar, India</span>
+      <h1 class="hero-title">Raushan<br>Kumar</h1>
+      <p class="hero-desc">
+        I build SaaS platforms, backend systems, and AI-powered tools.
+        <span class="hero-mute">Laravel · React · DevOps · AI</span>
+      </p>
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-primary">View Work →</a>
+        <a href="#contact" class="btn btn-ghost">Contact</a>
+      </div>
+    </div>
+    <div class="hero-aside">
+      <img src="images/profile-pic.png" alt="Raushan" class="hero-img" onerror="this.style.display='none'">
+    </div>
+  </section>
+
+  <!-- SEPARATOR -->
+  <div class="sep"><span>✦</span></div>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="section-inner">
+      <span class="section-num">01</span>
+      <h2 class="section-title">About</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Results-driven software engineer with strong background in designing and developing large-scale SaaS platforms. Experience with Laravel, MySQL, Redis, Docker, Kubernetes, and CI/CD pipelines. Build multi-tenant systems, optimize databases for millions of records, and implement automation pipelines.</p>
+          <p>Actively exploring AI technologies, LLMs, and agent-based automation to create intelligent applications.</p>
         </div>
-        <div class="hero-image">
-          <div class="image-wrapper floating-animation">
-            <div class="glow-effect"></div>
-            <img src="images/profile-pic.png" alt="Raushan" class="profile-img">
-            <div class="circle-bg"></div>
+        <div class="about-stats">
+          <div class="about-stat">
+            <span class="about-stat-num">50+</span>
+            <span class="about-stat-label">Projects</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-num">5+</span>
+            <span class="about-stat-label">Years</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-num">20+</span>
+            <span class="about-stat-label">Technologies</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="about" class="about">
-    <div class="container">
-      <h2 class="section-title reveal-animation">About Me</h2>
-      <div class="about-content">
-        <div class="about-text reveal-animation">
-          <p>I'm a results-driven <span class="highlight-text">Software Engineer</span> from India with a strong background in designing and developing large-scale SaaS platforms. With practical experience in Laravel, MySQL, Redis, Kubernetes, Docker, CI/CD, and modern frontend frameworks, I build highly optimized, secure, and scalable applications used by thousands of users.</p>
-          <p>I have hands-on experience in DevOps, cloud infrastructure, data warehousing (SSIS), and AI model integration. My work involves building multi-tenant systems, optimizing databases for millions of records, implementing automation pipelines, and architecting systems that scale with business needs.</p>
-          <p>Apart from development, I actively explore AI technologies, LLMs, and automation tools to create intelligent applications and smart agents. I enjoy contributing to open-source, experimenting with DevOps tooling, and improving system performance.</p>
-          <div class="stats">
-            <div class="stat counter-animation">
-              <h3 class="counter" data-target="50">0</h3>
-              <p>Projects Completed</p>
-            </div>
-            <div class="stat counter-animation">
-              <h3 class="counter" data-target="5">0</h3>
-              <p>Years Experience</p>
-            </div>
-            <div class="stat counter-animation">
-              <h3 class="counter" data-target="20">0</h3>
-              <p>Technologies Mastered</p>
-            </div>
-          </div>
-        </div>
-        <div class="about-image reveal-animation">
-          <div class="image-frame pulse-animation">
-            <img src="images/about.jpg" alt="About Raushan">
-            <div class="frame-border"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- SEPARATOR -->
+  <div class="sep"><span>✦</span></div>
 
-  <section id="skills" class="skills">
-    <div class="container">
-      <h2 class="section-title reveal-animation">My Skills</h2>
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="section-inner">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Skills</h2>
       <div class="skills-grid">
-        <div class="skill-category card-hover-effect reveal-animation">
-          <div class="skill-icon">
-            <i class="fas fa-code"></i>
-          </div>
-          <h3>Backend Development</h3>
+        <div class="skill-card">
+          <h3>Backend</h3>
           <ul>
-            <li><span class="skill-bullet">▸</span> Laravel, PHP, Node.js</li>
-            <li><span class="skill-bullet">▸</span> REST APIs, Microservices</li>
-            <li><span class="skill-bullet">▸</span> MySQL, PostgreSQL, NoSQL (MongoDB)</li>
-            <li><span class="skill-bullet">▸</span> Redis, Queue Systems, Elasticsearch</li>
-            <li><span class="skill-bullet">▸</span> Multi-tenancy SaaS Architecture</li>
+            <li>Laravel, PHP, Node.js</li>
+            <li>REST APIs, Microservices</li>
+            <li>MySQL, PostgreSQL, MongoDB</li>
+            <li>Redis, Elasticsearch</li>
+            <li>Multi-tenant SaaS</li>
           </ul>
-          <div class="skill-progress">
-            <div class="progress-bar" style="width: 95%"></div>
-          </div>
         </div>
-        <div class="skill-category card-hover-effect reveal-animation">
-          <div class="skill-icon">
-            <i class="fas fa-palette"></i>
-          </div>
-          <h3>Frontend Development</h3>
+        <div class="skill-card">
+          <h3>Frontend</h3>
           <ul>
-            <li><span class="skill-bullet">▸</span> React, Vue.js, JavaScript (ES6+)</li>
-            <li><span class="skill-bullet">▸</span> Tailwind CSS, Bootstrap, HTML5/CSS3</li>
-            <li><span class="skill-bullet">▸</span> Component Architecture & SPA Development</li>
+            <li>React, Vue.js, Inertia</li>
+            <li>JavaScript (ES6+)</li>
+            <li>Tailwind CSS, Bootstrap</li>
+            <li>HTML5/CSS3</li>
           </ul>
-          <div class="skill-progress">
-            <div class="progress-bar" style="width: 90%"></div>
-          </div>
         </div>
-        <div class="skill-category card-hover-effect reveal-animation">
-          <div class="skill-icon">
-            <i class="fas fa-server"></i>
-          </div>
-          <h3>DevOps & Cloud</h3>
+        <div class="skill-card">
+          <h3>DevOps</h3>
           <ul>
-            <li><span class="skill-bullet">▸</span> Docker, Kubernetes, Helm</li>
-            <li><span class="skill-bullet">▸</span> CI/CD (GitHub Actions, GitLab CI)</li>
-            <li><span class="skill-bullet">▸</span> AWS, GCP, Linux Server Management</li>
-            <li><span class="skill-bullet">▸</span> Nginx, Load Balancing, Reverse Proxy</li>
-            <li><span class="skill-bullet">▸</span> Monitoring & Logging (Prometheus, Grafana)</li>
+            <li>Docker, Kubernetes</li>
+            <li>CI/CD (GitHub Actions)</li>
+            <li>AWS, GCP, Linux</li>
+            <li>Nginx, Reverse Proxy</li>
+            <li>Prometheus, Grafana</li>
           </ul>
-          <div class="skill-progress">
-            <div class="progress-bar" style="width: 88%"></div>
-          </div>
         </div>
-        <div class="skill-category card-hover-effect reveal-animation">
-          <div class="skill-icon">
-            <i class="fas fa-brain"></i>
-          </div>
-          <h3>AI, Automation & Tools</h3>
+        <div class="skill-card">
+          <h3>AI &amp; Tools</h3>
           <ul>
-            <li><span class="skill-bullet">▸</span> Python, Machine Learning Basics</li>
-            <li><span class="skill-bullet">▸</span> LLMs, AI Agents (OpenAI, DeepSeek)</li>
-            <li><span class="skill-bullet">▸</span> TensorFlow, Hugging Face, Automation Scripts</li>
-            <li><span class="skill-bullet">▸</span> Git, Linux, Bash Scripting</li>
+            <li>Python, LangChain, LLMs</li>
+            <li>AI Agents (OpenAI, Claude)</li>
+            <li>RAG, Vector DBs</li>
+            <li>Git, Bash, Automation</li>
           </ul>
-          <div class="skill-progress">
-            <div class="progress-bar" style="width: 85%"></div>
-          </div>
-        </div>
-        <div class="skill-category card-hover-effect reveal-animation">
-          <div class="skill-icon">
-            <i class="fas fa-database"></i>
-          </div>
-          <h3>Other Technical Expertise</h3>
-          <ul>
-            <li><span class="skill-bullet">▸</span> Data Warehousing (SSIS)</li>
-            <li><span class="skill-bullet">▸</span> High-traffic optimization (10M+ users)</li>
-            <li><span class="skill-bullet">▸</span> Payment Integration (Stripe, PayPal)</li>
-            <li><span class="skill-bullet">▸</span> CRM, Lead Management, Messaging Systems</li>
-          </ul>
-          <div class="skill-progress">
-            <div class="progress-bar" style="width: 92%"></div>
-          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="experience" class="experience">
-    <div class="container">
-      <h2 class="section-title reveal-animation">Work Experience</h2>
-      <div class="timeline">
-        <div class="timeline-item reveal-animation slide-in-left">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">2022 - Present</div>
+  <!-- SEPARATOR -->
+  <div class="sep"><span>✦</span></div>
+
+  <!-- WORK -->
+  <section id="work" class="section">
+    <div class="section-inner">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Experience</h2>
+      <div class="work-list">
+        <div class="work-item">
+          <div class="work-head">
+            <span class="work-date">2022 — Present</span>
             <h3>Senior Software Engineer</h3>
-            <h4><i class="fas fa-building"></i> Tech Company Inc.</h4>
-            <p>• Architected and developed scalable SaaS applications using Laravel, Vue.js, and microservices architecture.</p>
-            <p>• Designed multi-tenant systems, role-based access control, and real-time messaging modules.</p>
-            <p>• Implemented CI/CD pipelines, Docker-based deployments, and Kubernetes cluster automation.</p>
-            <p>• Improved database performance for high-traffic systems handling millions of records.</p>
+            <span class="work-company">Tech Company Inc.</span>
           </div>
+          <p>Architected scalable SaaS apps with Laravel + Vue.js. Built multi-tenant systems, real-time messaging, and CI/CD pipelines. Optimized databases for high-traffic systems handling millions of records.</p>
         </div>
-        <div class="timeline-item reveal-animation slide-in-right">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">2020 - 2022</div>
+        <div class="work-item">
+          <div class="work-head">
+            <span class="work-date">2020 — 2022</span>
             <h3>Software Engineer</h3>
-            <h4><i class="fas fa-building"></i> StartupXYZ</h4>
-            <p>• Built backend APIs, integrated machine learning features, and optimized SQL queries.</p>
-            <p>• Developed CRM modules, marketing automation, and notification systems (WhatsApp, Email, SMS).</p>
-            <p>• Worked with Elasticsearch for real-time data search and indexing.</p>
+            <span class="work-company">StartupXYZ</span>
           </div>
-        </div>
-        <div class="timeline-item reveal-animation slide-in-left">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">2019 - 2020</div>
-            <h3>Junior Developer</h3>
-            <h4><i class="fas fa-building"></i> WebDev Solutions</h4>
-            <p>• Developed and maintained responsive web applications using PHP, Laravel, and Vue.js.</p>
-            <p>• Migrated legacy applications to modern stacks with improved performance and security.</p>
-          </div>
+          <p>Built backend APIs and ML features. Developed CRM modules, marketing automation, notification systems (WhatsApp, Email, SMS). Worked with Elasticsearch for real-time search.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="projects" class="projects">
-    <div class="container">
-      <h2 class="section-title reveal-animation">My Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card reveal-animation scale-in">
-          <div class="project-image">
-            <img src="images/project1.jpg" alt="Project 1">
-            <div class="project-overlay">
-              <div class="overlay-content">
-                <i class="fas fa-eye"></i>
-                <p>View Details</p>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3>E-Commerce Platform</h3>
-            <p>A full-stack e-commerce solution built with Laravel and React, featuring payment integration and admin dashboard.</p>
-            <div class="project-tech">
-              <span><i class="fab fa-laravel"></i> Laravel</span>
-              <span><i class="fab fa-react"></i> React</span>
-              <span><i class="fas fa-database"></i> MySQL</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn btn-small btn-glow">
-                <i class="fas fa-external-link-alt"></i> Live Demo
-              </a>
-              <a href="#" class="btn btn-small btn-outline">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="project-card reveal-animation scale-in">
-          <div class="project-image">
-            <img src="images/project2.jpg" alt="Project 2">
-            <div class="project-overlay">
-              <div class="overlay-content">
-                <i class="fas fa-eye"></i>
-                <p>View Details</p>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3>AI Chatbot</h3>
-            <p>An intelligent chatbot powered by machine learning, integrated with web applications for automated customer support.</p>
-            <div class="project-tech">
-              <span><i class="fab fa-python"></i> Python</span>
-              <span><i class="fas fa-brain"></i> TensorFlow</span>
-              <span><i class="fas fa-flask"></i> Flask</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn btn-small btn-glow">
-                <i class="fas fa-external-link-alt"></i> Live Demo
-              </a>
-              <a href="#" class="btn btn-small btn-outline">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="project-card reveal-animation scale-in">
-          <div class="project-image">
-            <img src="images/project3.jpg" alt="Project 3">
-            <div class="project-overlay">
-              <div class="overlay-content">
-                <i class="fas fa-eye"></i>
-                <p>View Details</p>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3>DevOps Dashboard</h3>
-            <p>A monitoring dashboard for CI/CD pipelines and infrastructure, built with Vue.js and integrated with Kubernetes.</p>
-            <div class="project-tech">
-              <span><i class="fab fa-vuejs"></i> Vue.js</span>
-              <span><i class="fab fa-docker"></i> Docker</span>
-              <span><i class="fas fa-dharmachakra"></i> Kubernetes</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn btn-small btn-glow">
-                <i class="fas fa-external-link-alt"></i> Live Demo
-              </a>
-              <a href="#" class="btn btn-small btn-outline">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="view-more reveal-animation">
-        <a href="https://github.com/Raushan666java" class="btn btn-primary btn-pulse">
-          <i class="fab fa-github"></i> View All Projects on GitHub
+  <!-- SEPARATOR -->
+  <div class="sep"><span>✦</span></div>
+
+  <!-- STUDY MATERIALS -->
+  <section id="study" class="section">
+    <div class="section-inner">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Placement Prep</h2>
+      <p class="section-desc">Complete placement preparation system. 10 modules, 500+ DSA problems, Pomodoro timer, interactive checklists.</p>
+      <div class="study-grid">
+        <a href="placement/placement/dashboard/" class="study-card">
+          <span class="study-card-icon">◈</span>
+          <h3>Dashboard</h3>
+          <p>Pomodoro timer, streak tracking, daily plan, module progress</p>
+        </a>
+        <a href="placement/placement/dsa-tracker/" class="study-card">
+          <span class="study-card-icon">◉</span>
+          <h3>DSA Tracker</h3>
+          <p>130+ problems · Search &amp; filter · Random picker · Progress bar</p>
+        </a>
+        <a href="placement/placement/goal/" class="study-card">
+          <span class="study-card-icon">◆</span>
+          <h3>90-Day Plan</h3>
+          <p>Day-by-day plan · Auto-highlight today · Notes widget</p>
+        </a>
+        <a href="placement/placement/02-cs-core/" class="study-card">
+          <span class="study-card-icon">⚙</span>
+          <h3>CS Core</h3>
+          <p>DSA, OS, DBMS, Networks, COA, TOC, Software Engineering</p>
+        </a>
+        <a href="placement/placement/08-interview-prep/" class="study-card">
+          <span class="study-card-icon">◈</span>
+          <h3>Interview Prep</h3>
+          <p>Technical, behavioral, system design · STAR method · Mock schedule</p>
+        </a>
+        <a href="placement/placement/10-system-design/" class="study-card">
+          <span class="study-card-icon">◈</span>
+          <h3>System Design</h3>
+          <p>Case studies · Framework · Scalability patterns</p>
         </a>
       </div>
     </div>
   </section>
 
-  <section id="education" class="education">
-    <div class="container">
-      <h2 class="section-title reveal-animation">Education</h2>
-      <div class="education-grid">
-        <div class="education-item card-hover-effect reveal-animation">
-          <div class="edu-icon">
-            <i class="fas fa-graduation-cap"></i>
-          </div>
-          <h3>Bachelor of Technology (B.Tech) – Computer Science & Engineering</h3>
-          <h4><i class="fas fa-university"></i> University Name | 2015 - 2019</h4>
-          <p>Graduated with specialization in Software Engineering, Algorithms, and System Design.</p>
-        </div>
-        <div class="education-item card-hover-effect reveal-animation">
-          <div class="edu-icon">
-            <i class="fas fa-certificate"></i>
-          </div>
-          <h3>Certifications</h3>
-          <ul class="cert-list">
-            <li><i class="fas fa-check-circle"></i> AWS Cloud Practitioner / Developer</li>
-            <li><i class="fas fa-check-circle"></i> Docker & Kubernetes Certification</li>
-            <li><i class="fas fa-check-circle"></i> Google Cloud Associate Engineer</li>
-            <li><i class="fas fa-check-circle"></i> GitHub Student Developer Pack Member</li>
-          </ul>
-        </div>
+  <!-- SEPARATOR -->
+  <div class="sep"><span>✦</span></div>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="section-inner">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-grid">
+        <a href="mailto:raushan919962@gmail.com" class="contact-card">
+          <span class="contact-card-label">Email</span>
+          <span class="contact-card-value">raushan919962@gmail.com</span>
+          <span class="contact-card-action">Send →</span>
+        </a>
+        <a href="https://linkedin.com/in/raushan666java" target="_blank" class="contact-card">
+          <span class="contact-card-label">LinkedIn</span>
+          <span class="contact-card-value">linkedin.com/in/raushan666java</span>
+          <span class="contact-card-action">Connect →</span>
+        </a>
+        <a href="https://github.com/Raushan666java" target="_blank" class="contact-card">
+          <span class="contact-card-label">GitHub</span>
+          <span class="contact-card-value">github.com/Raushan666java</span>
+          <span class="contact-card-action">Follow →</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2 class="section-title reveal-animation">Get In Touch</h2>
-      <div class="contact-content">
-        <div class="contact-info reveal-animation slide-in-left">
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <div>
-              <h4>Email</h4>
-              <p><a href="mailto:raushan919962@gmail.com">raushan919962@gmail.com</a></p>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-phone"></i>
-            </div>
-            <div>
-              <h4>Phone</h4>
-              <p>+91 6205834099</p>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <div>
-              <h4>Location</h4>
-              <p>Bihar, India</p>
-            </div>
-          </div>
-          <div class="social-links">
-            <a href="https://linkedin.com/in/raushan666java" class="social-icon linkedin">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/Raushan666java" class="social-icon github">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="#" class="social-icon twitter">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="social-icon instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </div>
-        </div>
-        <form class="contact-form reveal-animation slide-in-right">
-          <div class="form-group">
-            <input type="text" placeholder="Your Name" required class="form-input">
-            <span class="form-focus-border"></span>
-          </div>
-          <div class="form-group">
-            <input type="email" placeholder="Your Email" required class="form-input">
-            <span class="form-focus-border"></span>
-          </div>
-          <div class="form-group">
-            <textarea placeholder="Your Message" rows="5" required class="form-input"></textarea>
-            <span class="form-focus-border"></span>
-          </div>
-          <button type="submit" class="btn btn-primary btn-send">
-            <span>Send Message</span>
-            <i class="fas fa-paper-plane"></i>
-          </button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Raushan. All rights reserved. Built with ❤️ by Raushan.</p>
-      <div class="footer-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>&copy; 2026 Raushan Kumar</span>
+      <span>Built with mkdocs + blueprint.css</span>
     </div>
   </footer>
 
-  <!-- Back to Top Button -->
-  <button id="backToTop" class="back-to-top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
