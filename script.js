@@ -1,5 +1,5 @@
 (function(){
-  document.querySelectorAll('.nav-links a[href^="#"]').forEach(function(a) {
+  document.querySelectorAll('.header-nav a[href^="#"]').forEach(function(a) {
     a.addEventListener('click', function(e) {
       e.preventDefault();
       var target = document.querySelector(this.getAttribute('href'));
@@ -8,7 +8,7 @@
   });
 
   var sections = document.querySelectorAll('.section, .hero');
-  var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  var navLinks = document.querySelectorAll('.header-nav a[href^="#"]');
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
