@@ -6,68 +6,67 @@
   <title>Raushan Kumar · Software Engineer</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <nav class="nav">
     <div class="nav-inner">
-      <a href="#home" class="nav-logo">Raushan<span class="nav-logo-dot">.</span></a>
+      <a href="#home" class="nav-logo">Raushan<span class="dot">.</span></a>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#work">Work</a>
         <a href="#study">Study</a>
         <a href="#contact">Contact</a>
-        <a href="https://github.com/Raushan666java" class="nav-icon" target="_blank">GH</a>
+        <a href="https://github.com/Raushan666java" class="gh-link" target="_blank">GH</a>
       </div>
     </div>
   </nav>
 
   <section id="home" class="hero">
-    <div class="hero-body">
-      <span class="hero-label">Software Engineer · Bihar, India</span>
-      <h1 class="hero-title">Raushan<br><span class="hero-title-em">Kumar</span></h1>
-      <p class="hero-desc">
-        I build SaaS platforms, backend systems, and AI-powered tools.
-        <span class="hero-mute">Laravel · React · DevOps · AI</span>
-      </p>
-      <div class="hero-actions">
-        <a href="#work" class="btn btn-primary">View Work →</a>
-        <a href="#contact" class="btn btn-ghost">Contact</a>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="badge">Software Engineer · Bihar, India</div>
+        <h1 class="hero-title">Raushan Kumar</h1>
+        <p class="hero-desc">
+          I build SaaS platforms, backend systems, and AI-powered tools.
+          <span class="hero-sub">Laravel · React · DevOps · AI</span>
+        </p>
+        <div class="hero-actions">
+          <a href="#work" class="btn-primary">View Work</a>
+          <a href="#contact" class="btn-secondary">Contact</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="avatar">
+          <span>RK</span>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="about" class="section">
     <div class="section-inner">
-      <div class="section-header">
+      <div class="section-head">
         <span class="section-num">01</span>
-        <h2 class="section-title">About</h2>
-        <p class="section-desc">Who I am and what I do.</p>
+        <h2>About</h2>
       </div>
       <div class="about-grid">
-        <div class="about-text">
-          <p>Results-driven software engineer with strong background in designing and developing large-scale SaaS platforms. Experience with Laravel, MySQL, Redis, Docker, Kubernetes, and CI/CD pipelines. Build multi-tenant systems, optimize databases for millions of records, and implement automation pipelines.</p>
-          <p>Actively exploring AI technologies, LLMs, and agent-based automation to create intelligent applications.</p>
+        <p class="about-text">Results-driven software engineer with strong background in designing and developing large-scale SaaS platforms. Experience with Laravel, MySQL, Redis, Docker, Kubernetes, and CI/CD pipelines. Build multi-tenant systems, optimize databases for millions of records, and implement automation pipelines.</p>
+        <p class="about-text">Actively exploring AI technologies, LLMs, and agent-based automation to create intelligent applications.</p>
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-num">50+</span>
+          <span class="stat-label">Projects</span>
         </div>
-        <div class="about-stats">
-          <div class="about-stat">
-            <span class="about-stat-num">50+</span>
-            <span class="about-stat-label">Projects</span>
-          </div>
-          <div class="about-stat">
-            <span class="about-stat-num">5+</span>
-            <span class="about-stat-label">Years Exp</span>
-          </div>
-          <div class="about-stat">
-            <span class="about-stat-num">20+</span>
-            <span class="about-stat-label">Technologies</span>
-          </div>
-          <div class="about-stat">
-            <span class="about-stat-num">Laravel</span>
-            <span class="about-stat-label">Primary Stack</span>
-          </div>
+        <div class="stat">
+          <span class="stat-num">5+</span>
+          <span class="stat-label">Years</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">20+</span>
+          <span class="stat-label">Technologies</span>
         </div>
       </div>
     </div>
@@ -75,14 +74,13 @@
 
   <section id="skills" class="section">
     <div class="section-inner">
-      <div class="section-header">
+      <div class="section-head">
         <span class="section-num">02</span>
-        <h2 class="section-title">Skills</h2>
-        <p class="section-desc">Technologies and tools I work with.</p>
+        <h2>Skills</h2>
       </div>
       <div class="skills-grid">
         <div class="skill-card">
-          <h3>Backend</h3>
+          <h3><span class="skill-icon">⚙️</span> Backend</h3>
           <ul>
             <li>Laravel, PHP, Node.js</li>
             <li>REST APIs, Microservices</li>
@@ -92,7 +90,7 @@
           </ul>
         </div>
         <div class="skill-card">
-          <h3>Frontend</h3>
+          <h3><span class="skill-icon">🎨</span> Frontend</h3>
           <ul>
             <li>React, Vue.js, Inertia</li>
             <li>JavaScript (ES6+)</li>
@@ -101,7 +99,7 @@
           </ul>
         </div>
         <div class="skill-card">
-          <h3>DevOps</h3>
+          <h3><span class="skill-icon">☁️</span> DevOps</h3>
           <ul>
             <li>Docker, Kubernetes</li>
             <li>CI/CD (GitHub Actions)</li>
@@ -111,7 +109,7 @@
           </ul>
         </div>
         <div class="skill-card">
-          <h3>AI &amp; Tools</h3>
+          <h3><span class="skill-icon">🤖</span> AI &amp; Tools</h3>
           <ul>
             <li>Python, LangChain, LLMs</li>
             <li>AI Agents (OpenAI, Claude)</li>
@@ -125,26 +123,25 @@
 
   <section id="work" class="section">
     <div class="section-inner">
-      <div class="section-header">
+      <div class="section-head">
         <span class="section-num">03</span>
-        <h2 class="section-title">Experience</h2>
-        <p class="section-desc">Places I've worked and things I've built.</p>
+        <h2>Experience</h2>
       </div>
       <div class="work-list">
-        <div class="work-item">
-          <div class="work-head">
+        <div class="work-card">
+          <div class="work-meta">
             <span class="work-date">2022 — Present</span>
-            <h3>Senior Software Engineer</h3>
             <span class="work-company">Tech Company Inc.</span>
           </div>
+          <h3>Senior Software Engineer</h3>
           <p>Architected scalable SaaS apps with Laravel + Vue.js. Built multi-tenant systems, real-time messaging, and CI/CD pipelines. Optimized databases for high-traffic systems handling millions of records.</p>
         </div>
-        <div class="work-item">
-          <div class="work-head">
+        <div class="work-card">
+          <div class="work-meta">
             <span class="work-date">2020 — 2022</span>
-            <h3>Software Engineer</h3>
             <span class="work-company">StartupXYZ</span>
           </div>
+          <h3>Software Engineer</h3>
           <p>Built backend APIs and ML features. Developed CRM modules, marketing automation, notification systems (WhatsApp, Email, SMS). Worked with Elasticsearch for real-time search.</p>
         </div>
       </div>
@@ -153,39 +150,39 @@
 
   <section id="study" class="section">
     <div class="section-inner">
-      <div class="section-header">
+      <div class="section-head">
         <span class="section-num">04</span>
-        <h2 class="section-title">Placement Prep</h2>
-        <p class="section-desc">Complete placement preparation system — 10 modules, interactive tools, and trackers.</p>
+        <h2>Placement Prep</h2>
       </div>
+      <p class="section-sub">Complete placement preparation system — 10 modules, interactive tools, and trackers.</p>
       <div class="study-grid">
         <a href="https://raushan666java.github.io/ai-engineering-journey/placement/dashboard/" class="study-card" target="_blank">
-          <span class="study-card-icon">📊</span>
+          <span class="study-icon">📊</span>
           <h3>Dashboard</h3>
           <p>Pomodoro timer, streak tracking, daily plan, module progress</p>
         </a>
         <a href="https://raushan666java.github.io/ai-engineering-journey/placement/dsa-tracker/" class="study-card" target="_blank">
-          <span class="study-card-icon">🧩</span>
+          <span class="study-icon">🧩</span>
           <h3>DSA Tracker</h3>
-          <p>130+ problems · Search &amp; filter · Random picker · Progress bar</p>
+          <p>130+ problems · Search &amp; filter · Random picker</p>
         </a>
         <a href="https://raushan666java.github.io/ai-engineering-journey/placement/goal/" class="study-card" target="_blank">
-          <span class="study-card-icon">🎯</span>
+          <span class="study-icon">🎯</span>
           <h3>90-Day Plan</h3>
           <p>Day-by-day plan · Auto-highlight today · Notes widget</p>
         </a>
         <a href="https://raushan666java.github.io/ai-engineering-journey/placement/02-cs-core/" class="study-card" target="_blank">
-          <span class="study-card-icon">💻</span>
+          <span class="study-icon">💻</span>
           <h3>CS Core</h3>
           <p>DSA, OS, DBMS, Networks, COA, TOC, Software Engineering</p>
         </a>
         <a href="https://raushan666java.github.io/ai-engineering-journey/placement/08-interview-prep/" class="study-card" target="_blank">
-          <span class="study-card-icon">⚡</span>
+          <span class="study-icon">⚡</span>
           <h3>Interview Prep</h3>
-          <p>Technical, behavioral, system design · STAR method · Mock schedule</p>
+          <p>Technical, behavioral, system design · STAR method</p>
         </a>
         <a href="https://raushan666java.github.io/ai-engineering-journey/placement/10-system-design/" class="study-card" target="_blank">
-          <span class="study-card-icon">🏗️</span>
+          <span class="study-icon">🏗️</span>
           <h3>System Design</h3>
           <p>Case studies · Framework · Scalability patterns</p>
         </a>
@@ -195,26 +192,26 @@
 
   <section id="contact" class="section">
     <div class="section-inner">
-      <div class="section-header">
+      <div class="section-head">
         <span class="section-num">05</span>
-        <h2 class="section-title">Contact</h2>
-        <p class="section-desc">Get in touch or follow my work.</p>
+        <h2>Contact</h2>
       </div>
+      <p class="section-sub">Get in touch or follow my work.</p>
       <div class="contact-grid">
         <a href="mailto:raushan919962@gmail.com" class="contact-card">
-          <span class="contact-card-label">Email</span>
-          <span class="contact-card-value">raushan919962@gmail.com</span>
-          <span class="contact-card-action">Send →</span>
+          <span class="contact-label">Email</span>
+          <span class="contact-value">raushan919962@gmail.com</span>
+          <span class="contact-action">Send →</span>
         </a>
         <a href="https://linkedin.com/in/raushan666java" target="_blank" class="contact-card">
-          <span class="contact-card-label">LinkedIn</span>
-          <span class="contact-card-value">linkedin.com/in/raushan666java</span>
-          <span class="contact-card-action">Connect →</span>
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">linkedin.com/in/raushan666java</span>
+          <span class="contact-action">Connect →</span>
         </a>
         <a href="https://github.com/Raushan666java" target="_blank" class="contact-card">
-          <span class="contact-card-label">GitHub</span>
-          <span class="contact-card-value">github.com/Raushan666java</span>
-          <span class="contact-card-action">Follow →</span>
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value">github.com/Raushan666java</span>
+          <span class="contact-action">Follow →</span>
         </a>
       </div>
     </div>
@@ -223,7 +220,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <span>&copy; 2026 Raushan Kumar</span>
-      <span>Designed &amp; built from scratch</span>
+      <span>Designed from scratch</span>
     </div>
   </footer>
 
