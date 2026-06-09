@@ -5,21 +5,18 @@
   var root = document.documentElement;
 
   // === THEME TOGGLE ===
+  // Sync with Material's palette system on load
+  var scheme = document.body.getAttribute('data-md-color-scheme') || 'default';
   var storedTheme = localStorage.getItem('theme');
-  if (storedTheme) {
-    root.setAttribute('data-theme', storedTheme);
-  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    root.setAttribute('data-theme', 'dark');
-  } else {
-    root.setAttribute('data-theme', 'light');
-  }
+  var initialTheme = storedTheme || (scheme === 'slate' || scheme === 'dark' ? 'dark' : 'light');
+  root.setAttribute('data-theme', initialTheme);
 
   // Listen for theme toggle from MkDocs palette
   document.addEventListener('DOMContentLoaded', function() {
     var paletteToggles = document.querySelectorAll('[data-md-color-scheme]');
     for (var i = 0; i < paletteToggles.length; i++) {
       paletteToggles[i].addEventListener('click', function() {
-        var currentScheme = root.getAttribute('data-md-color-scheme') || 'default';
+        var currentScheme = document.body.getAttribute('data-md-color-scheme') || 'default';
         var nextTheme = currentScheme === 'default' || currentScheme === 'light' ? 'dark' : 'light';
         root.setAttribute('data-theme', nextTheme);
         localStorage.setItem('theme', nextTheme);
@@ -193,6 +190,16 @@
     var el = document.getElementById('streak-display');
     if (el) {
       var s = window.AEJStreak;
+      var cur = s.current();
+      var fire = cur >= 30 ? '🔥🔥🔥' : cur >= 21 ? '🔥🔥' : cur >= 14 ? '🔥' : cur >= 7 ? '💪' : cur >= 3 ? '👏' : '';
+      var celebration = '';
+      if (cur === 3) celebration = '<div class="streak-celebrate">3 days! Habit building start 🚀</div>';
+      else if (cur === 5) celebration = '<div class="streak-celebrate">5 days! Full week 🔥</div>';
+      else if (cur === 7) celebration = '<div class="streak-celebrate">1 week consistent! ⭐</div>';
+      else if (cur === 10) celebration = '<div class="streak-celebrate">Double digits! Legend status loading 🏆</div>';
+      else if (cur === 14) celebration = '<div class="streak-celebrate">2 weeks! You are a machine 🤖</div>';
+      else if (cur === 21) celebration = '<div class="streak-celebrate">21 days — habit locked! 🧠</div>';
+      else if (cur >= 30) celebration = '<div class="streak-celebrate">' + cur + ' days! Placement hunter mode 🎯</div>';
       var days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
       var now = new Date();
       var weekHtml = '';
@@ -203,7 +210,8 @@
         var cls = s.data.days[key] ? 'streak-day done' : 'streak-day';
         weekHtml += '<span class="' + cls + '">' + days[d.getDay()][0] + '</span>';
       }
-      el.innerHTML = '<div class="streak-row"><span class="streak-count">' + s.current() + ' day streak</span></div>'
+      el.innerHTML = '<div class="streak-row"><span class="streak-count">' + cur + ' day streak ' + fire + '</span></div>'
+        + celebration
         + '<div class="streak-week">' + weekHtml + '</div>';
     }
   })();
@@ -347,5 +355,61 @@
     for (var i = 0; i < statBars.length; i++) {
       observer.observe(statBars[i]);
     }
+  });
+
+  // === DAILY BANNER - GREETING + QUOTE + TIP ===
+  var greetings = [
+    "Aaja serious ho jaate hain!",
+    "Focus mode ON. Duniya baad mein.",
+    "Ek aur din, ek aur chance apne aap ko prove karne ka.",
+    "Placement tera wait kar rahi hai. Padh le bhai.",
+    "Aaj ka target: 2 topics, 5 problems, 0 distractions.",
+    "Jo aaj nahi karega, woh kal pachtayega. Start karo!",
+    "Consistency > Intensity. Bas aaj bhi kar liya.",
+    "Hard work beats talent when talent doesn't work hard.",
+    "Tera competition sirf TU hai — kal se better aaj.",
+    "Aaj kuch aisa padho ki interview mein confidence aaye!"
+  ];
+  var quotes = [
+    "Duniya mein sabse powerful cheez hai — ek disciplined mind.",
+    "Padhne se fark padta hai. Har topic tumhe ek kadam aage le jaata hai.",
+    "Tum apni life ke CEO ho. Aaj ka decision tumhara future decide karega.",
+    "Placement ka dar mat, placement ki taiyari ka dar dikhao — karo toh kaun rok sakta hai?",
+    "Jo log consistent rehte hain, unhe koi nahi hara sakta.",
+    "Success overnight nahi aati. Har roz ki mehnat ka result hoti hai.",
+    "Kal soch rahe the? Aaj kar lo. Time wait nahi karta.",
+    "Tumhara competition tumse door nahi — tumse aage hai. Pakdo!"
+  ];
+  var tips = [
+    "Complex topic ko chhote parts mein tod do — 25 min focus, 5 min break",
+    "Koi bhi problem 20 min se zyada mat uljho. Hint dekho, seekho, aage badho.",
+    "Padhai se pehle 2 min deep breathing — focus 2x ho jaayega",
+    "Learning technique: Padho → Khud se explain karo → Likho → Repeat",
+    "Har din ka 1 problem LinkedIn pe post karo — consistency ka habit banega",
+    "Padhte samay phone ko door rakkho — out of sight, out of mind",
+    "Sleep is underrated. 7-8 hrs sleep = better retention + clarity",
+    "Active recall: Chapter padhne ke baad 5 min band aankh yaad karo",
+  ];
+
+  function getDayIndex() {
+    return new Date().getDay(); // 0=Sun, 1=Mon, ...
+  }
+
+  function updateBanner() {
+    var greetingEl = document.getElementById('banner-greeting');
+    var quoteEl = document.getElementById('banner-quote');
+    var tipEl = document.getElementById('daily-tip');
+    if (!greetingEl || !quoteEl || !tipEl) return;
+
+    var dayIdx = getDayIndex();
+    var dayOfMonth = new Date().getDate();
+    greetingEl.textContent = greetings[dayIdx % greetings.length];
+    quoteEl.textContent = '"' + quotes[(dayIdx + dayOfMonth) % quotes.length] + '"';
+    tipEl.textContent = tips[(dayIdx + dayOfMonth) % tips.length];
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    updateBanner();
+    setInterval(updateBanner, 3600000);
   });
 })();
